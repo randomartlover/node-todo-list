@@ -12,7 +12,8 @@ app.get('/contact', function (req, res) {
 })
 
 app.get('/profile/:name', function (req, res) {
-  res.render('profile', {person: req.params.name});
+  const data = {age: 24, job: "Dreamer", hobbies: ["puzzles", "dancing", "singing", "swimming"]}
+  res.render('profile', {person: req.params.name, data});
 })
 
 app.listen(3000)
