@@ -8,6 +8,8 @@
     h1{ font-size: 48px;}
     h2{ font-size: 30px;}
     p, ul{ font-size: 16px; width: fit-content; margin: auto;}
+    form{display: flex; flex-direction: column; width: 50%; margin: auto;}
+    input{margin: 8px 0;}
   </style>
 </head>
 
@@ -15,6 +17,17 @@
   <%-include ('partials/navbar.ejs') %>
   <h1>Contact Us</h1>
   <p>Reach out to the creator of the best tribute site</p>
+  <p><%= qs.dept %></p>
+
+  <form id="contact-form">
+    <label for="person">Who do you want to contact?</label>
+    <input type="text" name="person" value="<%= qs.person%>">
+    <label for="dept">What department?</label>
+    <input type="text" name="dept" value="<%= qs.dept%>">
+    <label for="email">Your email</label>
+    <input type="text" name="email" value="<%= qs.email%>">
+    <input type="submit" value="Submit">
+  </form>
 </body>
 
 </html>
